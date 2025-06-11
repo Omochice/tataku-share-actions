@@ -58,7 +58,6 @@ jobs:
           permission-content: write
           permission-pull-requests: write
       - name: Create Pull Request
-        if: ${{ steps.branch-check.outputs.isProtected == 'true' }}
         uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
         with:
           title: "docs: update docs"
