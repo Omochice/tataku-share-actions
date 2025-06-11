@@ -1,0 +1,26 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "github>Omochice/personal-renovate-config",
+  ],
+  lockFileMaintenance: {
+    enabled: true,
+    automerge: true,
+    schedule: [
+      "before 3:00am",
+    ],
+  },
+  nix: {
+    enabled: true,
+  },
+  packageRules: [
+    {
+      matchUpdateTypes: [
+        "major",
+        "minor",
+        "patch",
+      ],
+      automerge: true,
+    },
+  ],
+}
