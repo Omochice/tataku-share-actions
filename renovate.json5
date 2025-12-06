@@ -1,7 +1,7 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: [
-    "github>Omochice/tataku-share-actions",
+    "github>Omochice/tataku-shared-actions",
   ],
   "renovate-config-presets": {
     managerFilePatterns: [
