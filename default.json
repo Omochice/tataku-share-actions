@@ -4,15 +4,5 @@
     "github>Omochice/personal-renovate-config#v1.10.0",
     "github>Omochice/personal-renovate-config:nix#v1.10.0",
     "github>Omochice/renovate-config:deno#v4.0.1"
-  ],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true,
-    "schedule": [
-      "before 3:00am"
-    ]
-  },
-  "nix": {
-    "enabled": true
-  }
+  ]
 }
