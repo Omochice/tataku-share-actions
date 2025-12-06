@@ -85,7 +85,8 @@
               pkgs.zizmor
             ];
           check-renovate-config =
-            "renovate-config-validator renovate.json5" |> runAs "check-renovate-config" [ pkgs.renovate ];
+            "renovate-config-validator renovate.json5 default.json"
+            |> runAs "check-renovate-config" [ pkgs.renovate ];
         };
         checks = {
           formatting = treefmt.config.build.check self;
