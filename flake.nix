@@ -71,10 +71,7 @@
           };
       in
       {
-        formatter = treefmt.config.build.wrapper;
-        checks = {
-          formatting = treefmt.config.build.check self;
-        };
+        # keep-sorted start block=yes
         apps = {
           check-actions =
             ''
@@ -90,6 +87,11 @@
           check-renovate-config =
             "renovate-config-validator renovate.json5" |> runAs "check-renovate-config" [ pkgs.renovate ];
         };
+        checks = {
+          formatting = treefmt.config.build.check self;
+        };
+        formatter = treefmt.config.build.wrapper;
       }
+      # keep-sorted end
     );
 }
