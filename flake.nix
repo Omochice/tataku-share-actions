@@ -54,8 +54,8 @@
                   };
                 };
               };
+              # keep-sorted end
             };
-            # keep-sorted end
           }
         );
         runAs =
@@ -71,23 +71,27 @@
           };
       in
       {
-        formatter = treefmt.config.build.wrapper;
-        checks = {
-          formatting = treefmt.config.build.check self;
-        };
+        # keep-sorted start block=yes
         apps = {
           check-actions =
             ''
               actionlint
               ghalint run
+              zizmor .github
             ''
             |> runAs "check-actions" [
               pkgs.actionlint
               pkgs.ghalint
+              pkgs.zizmor
             ];
           check-renovate-config =
             "renovate-config-validator renovate.json5" |> runAs "check-renovate-config" [ pkgs.renovate ];
         };
+        checks = {
+          formatting = treefmt.config.build.check self;
+        };
+        formatter = treefmt.config.build.wrapper;
       }
+      # keep-sorted end
     );
 }
