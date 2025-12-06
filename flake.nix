@@ -54,8 +54,8 @@
                   };
                 };
               };
+              # keep-sorted end
             };
-            # keep-sorted end
           }
         );
         runAs =
@@ -80,10 +80,12 @@
             ''
               actionlint
               ghalint run
+              zizmor .github
             ''
             |> runAs "check-actions" [
               pkgs.actionlint
               pkgs.ghalint
+              pkgs.zizmor
             ];
           check-renovate-config =
             "renovate-config-validator renovate.json5" |> runAs "check-renovate-config" [ pkgs.renovate ];
