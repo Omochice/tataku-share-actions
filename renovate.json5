@@ -3,6 +3,12 @@
   extends: [
     "github>Omochice/tataku-share-actions",
   ],
+  "renovate-config-presets": {
+    managerFilePatterns: [
+      "renovate.json5",
+      "default.json",
+    ],
+  },
   packageRules: [
     {
       matchUpdateTypes: [
